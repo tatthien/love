@@ -1,5 +1,6 @@
 build:
 	mkdir -p functions
-	cp template.txt functions/template.txt
 	go get ./...
 	go build -o functions/love ./...
+deploy:
+	netlify deploy --functions=functions --prod
