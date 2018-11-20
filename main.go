@@ -6,21 +6,20 @@ import (
 	"strings"
 )
 
-var heart = `:heart::heart::heart::heart::heart::heart::heart::heart::heart::heart::heart:
-:heart::heart::heart:            :heart:           :heart::heart::heart:
-:heart::heart:                                        :heart::heart:
-:heart::heart::heart:                             :heart::heart::heart:
-:heart::heart::heart::heart:                  :heart::heart::heart::heart:
-:heart::heart::heart::heart::heart:      :heart::heart::heart::heart::heart:
-:heart::heart::heart::heart::heart::heart::heart::heart::heart::heart::heart:`
+var heart = `:x::x::x::x::x::x::x::x::x::x::x:
+:x::x::x:            :x:           :x::x::x:
+:x::x:                                        :x::x:
+:x::x::x:                             :x::x::x:
+:x::x::x::x:                  :x::x::x::x:
+:x::x::x::x::x:      :x::x::x::x::x:
+:x::x::x::x::x::x::x::x::x::x::x:`
 
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
-	text := request.QueryStringParameters["text"]
-	newHeart := strings.Replace(heart, ":heart:", text, -1)
-
+	emoji := request.QueryStringParameters["text"]
+	newHeart := strings.Replace(heart, ":x:", emoji, -1)
 	return events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		Body: newHeart,
+		Body:       newHeart,
 	}, nil
 }
 
