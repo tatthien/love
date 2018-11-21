@@ -1,5 +1,7 @@
 # love
 
+![https://i.imgur.com/MeVRiOM.gif](https://i.imgur.com/MeVRiOM.gif)
+
 A Slack's slash command that shows a heart built from a lot of emojis.
 
 > This project is created for Go Lambda Functions learning purpose. Hosted on Netlify.
